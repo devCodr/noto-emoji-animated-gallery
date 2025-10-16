@@ -1,0 +1,97 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --border: #30363d;
+  --accent: #238636;
+  --danger: #da3633;
+}
+[data-theme="light"] {
+  --bg: #f6f8fa;
+  --panel: #ffffff;
+  --text: #1f2328;
+  --muted: #59636e;
+  --border: #d0d7de;
+  --accent: #0969da;
+  --danger: #cf222e;
+}
+*{box-sizing:border-box}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+  margin: 0;
+}
+.container { width: min(1200px, 94vw); margin: 0 auto; }
+.head { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+h1 { margin: 0 0 4px; }
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+input, select, button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+}
+button:hover { background: var(--border); cursor: pointer; }
+button.ghost { background: transparent; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+.thumbWrap { position: relative }
+.thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  display: block;
+}
+.badge {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 11px;
+  line-height: 1;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  border: 1px solid var(--accent);
+}
+.badge.static {
+  background: color-mix(in srgb, var(--danger) 20%, transparent);
+  border-color: var(--danger);
+}
+.name { font-size: 14px; font-weight: 600; }
+.shortcode, .internal, .codes { font-size: 12px; color: var(--muted); }
+.urlInput {
+  width: 100%;
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  background: transparent;
+}
+.btns { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.footer { text-align: center; color: var(--muted); margin: 24px 0; }
