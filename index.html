@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noto Emoji Animated Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="container head">
+  <div>
+    <h1>Noto Emoji Animated Gallery</h1>
+    <p>Animated emojis from Google Fonts (latest)</p>
+  </div>
+  <button id="themeBtn">Light</button>
+</header>
+
+<section class="container controls">
+  <input id="searchInput" type="text" placeholder="Search (e.g. smile, heart, beer, 1f604, emoji_u1f604)">
+  <select id="sizeSelect">
+    <option>32</option>
+    <option>72</option>
+    <option>128</option>
+    <option>256</option>
+    <option selected>512</option>
+  </select>
+  <select id="formatSelect">
+    <option value="webp" selected>webp (animated)</option>
+    <option value="gif">gif</option>
+    <option value="png">png (static)</option>
+    <option value="picture">picture (webp+gif)</option>
+  </select>
+  <button id="buildBtn">Build</button>
+  <button id="clearBtn" class="ghost">Clear</button>
+  <button id="copyAllUrlsBtn" class="ghost">Copy URLs</button>
+  <button id="copyAllImgsBtn" class="ghost">Copy markup</button>
+</section>
+
+<main class="container">
+  <div id="grid" class="grid"></div>
+  <div id="sentinel"></div>
+</main>
+
+<footer class="container footer">
+  <p>Powered by <a href="https://fonts.google.com/noto/specimen/Noto+Emoji" target="_blank">Noto Emoji</a></p>
+</footer>
+
+<template id="cardTpl">
+  <div class="card">
+    <div class="thumbWrap">
+      <a class="thumbLink" target="_blank" rel="noopener">
+        <img class="thumb" loading="lazy">
+      </a>
+      <span class="badge">Animated</span>
+    </div>
+    <div class="meta">
+      <div class="name"></div>
+      <div class="shortcode"></div>
+      <div class="internal"></div>
+      <input class="urlInput" readonly>
+      <div class="btns">
+        <button class="copyUrl">Copy URL</button>
+        <button class="copyImg">Copy markup</button>
+        <button class="open ghost">Open</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
